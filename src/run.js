@@ -1,0 +1,6 @@
+
+function run() {
+    startInterface();
+}
+
+run();
