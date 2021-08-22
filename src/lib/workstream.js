@@ -3,7 +3,7 @@
 // workstreams are, recursively, a conglomeration of other worksteams
 class Workstream {
     constructor(attributes, data) {
-        this.attribute = attributes;    // attributes are fixed and should only be edited manually in the file
+        this.attributes = attributes;    // attributes are fixed and should only be edited manually in the file
         this.data = data;   // data is editable by ui
     }
 
@@ -11,14 +11,38 @@ class Workstream {
         return this.members[0];
     }
 
-    get members() {
-        this.attributes.findMembers(this.data);
+    get dependencies() {
+        this.attributes.findDependencies(this.data);
     }
 }
 
+function getWorkstreamPath(name) {
+    return ['../workstreams/active/', name].join('');
+}
 
-// ....
+function makeWorkstreamFromFile(path) {
+    attributes = require([path, 'attributes.js'].join('/'));
+    data = require([path, 'data.js'].join('/'));
+    return new Workstream(attributes, data);
+}
+// console.log(makeWorkstreamFromFile(getWorkstreamPath('all_tasks'))); //test
+
+function makeWorkstreamFetcher() {
+    const cache = {};
+    function fetch(workstreamName) {
+        const workstream = cache[workstreamName] || makeWorkstreamFromFile(getWorkstreamPath(workstreamName));
+        cache[workstreamName] = workstream;
+        return workstream;
+    }
+    return fetch;
+}
+const fetchWorkstream = makeWorkstreamFetcher();
+
+function saveWorkstreamData() {}
 
 // <-
+// ....
 
-// function saveWorkstreamData() {}
+
+
+module.exports = { fetchWorkstream };
