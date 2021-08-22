@@ -1,0 +1,27 @@
+{
+  "name": "workstreams",
+  "version": "1.0.0",
+  "description": "Experiment on workstream-based architecture for task management",
+  "main": "run.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjcha1024/workstreams.git"
+  },
+  "author": "Mengyang Cha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjcha1024/workstreams/issues"
+  },
+  "homepage": "https://github.com/mjcha1024/workstreams#readme",
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "typescript": "^4.3.5"
+  }
+}
