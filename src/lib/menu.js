@@ -1,8 +1,4 @@
 
-
-const Lazelet = require('./lazelet.js');
-
-
 function prettifyOptions(options) {
     numberedOptions = options.map((option, idx) => [idx + 1, ". ", option].join(""));
     return numberedOptions.join('\n');
@@ -13,8 +9,9 @@ class Menu {
     constructor(prompt, options, responses, rl) {
         this._prompt = prompt;
         this._options = options;
-        this._responses = responses;
         this.rl = rl;
+        this._responses = responses;
+        this._responses.makeFunc = key => (() => 'initMenu'); // set the default response function to just reload the menu
     }
 
     // returns copy of the prompt that will get printed out
