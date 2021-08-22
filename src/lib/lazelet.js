@@ -28,7 +28,7 @@ function test1(key) {
     dict = {
         testFunc: () => "testFunc value"
     };
-    mofo = new Lazelet(dict);
+    lazelet = new Lazelet(dict);
     console.log(lazelet.process(key));
 }
 // test1("testFunc"); // "testFunc value"
@@ -38,7 +38,7 @@ function test2(key, makeFunc = key => (() => key)) {
     dict = {
         testFunc: () => "testFunc value"
     };
-    mofo = new Lazelet(dict, makeFunc);
+    lazelet = new Lazelet(dict, makeFunc);
     console.log(lazelet.process(key));
 }
 // test2("testFunc"); // "testFunc value"

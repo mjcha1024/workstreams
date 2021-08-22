@@ -5,7 +5,7 @@ const menuInputs = {
     prompt: 'Hi! What would you like to do?',
     options: [
         'add new workstream',
-        'next',
+        'next task',
         'reload task queue',
         'all workstreams',
         'exit'

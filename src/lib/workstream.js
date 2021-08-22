@@ -2,7 +2,6 @@
 
 // workstreams are, recursively, a conglomeration of other worksteams
 class Workstream {
-
     constructor(attributes, data) {
         this.attribute = attributes;    // attributes are fixed and should only be edited manually in the file
         this.data = data;   // data is editable by ui
@@ -16,7 +15,6 @@ class Workstream {
         this.attributes.findMembers(this.data);
     }
 }
-
 
 
 // ....
