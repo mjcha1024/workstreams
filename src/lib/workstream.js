@@ -1,4 +1,5 @@
 
+const { saveData } = require('./utilities.js');
 
 // workstreams are, recursively, a conglomeration of other worksteams
 class Workstream {
@@ -13,6 +14,11 @@ class Workstream {
 
     get dependencies() {
         this.attributes.findDependencies(this.data);
+    }
+
+    updateData(key, newData) {
+        this.data[key] = newData;
+        saveData(this.data, ['./src/workstreams/active', this.attributes.id, 'data.js'].join('/'));
     }
 }
 
@@ -38,10 +44,11 @@ function makeWorkstreamFetcher() {
 }
 const fetchWorkstream = makeWorkstreamFetcher();
 
-function saveWorkstreamData() {}
 
-// <-
+fetchWorkstream('all_tasks').updateData('label', 'all_tasks_updated'); //test
+
 // ....
+// <-
 
 
 
