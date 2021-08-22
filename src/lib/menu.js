@@ -26,8 +26,16 @@ class Menu {
     // responds to input
     respond(input) {
         // console.debug(this)
-        const nextMenu = this._responses.process(input);
-        showMenu(nextMenu, this.rl);
+        if (input === 'c') {
+            showMenu('initMenu', this.rl)
+        } else {
+            const nextMenuName = this._responses.process(input);
+            if (nextMenuName === "close") {
+                this.rl.close();
+            } else {
+                showMenu(nextMenuName, this.rl);
+            }
+        }
     }
 }
 
@@ -51,7 +59,7 @@ function makeMenuFromBlueprint(menuName, rl) {
 function showMenu(menuName, rl) {
     const menu = makeMenuFromBlueprint(menuName, rl);
     // console.log(menu)
-    menu.rl.question(['\n', menu.prompt, '\n', '\n'].join(''), menu.respond.bind(menu));
+    rl.question(['\n', menu.prompt, '\n', '\n'].join(''), menu.respond.bind(menu));
 }
 
 module.exports = { Menu, showMenu };

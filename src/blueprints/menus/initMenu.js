@@ -2,24 +2,29 @@
 const Lazelet = require('../../lib/lazelet.js')
 
 const menuInputs = {
-    prompt: 'test prompt',
+    prompt: 'Hi! What would you like to do?',
     options: [
-        'test option 1',
-        'test option 2',
-        'test option 3'
+        'add new workstream',
+        'next',
+        'reload task queue',
+        'all workstreams',
+        'exit'
     ],
     responses: new Lazelet({
         1: () => {
-            console.log('option 1 chosen!');
             return 'initMenu';
         },
         2: () => {
-            console.log('option 2 chosen!');
             return 'initMenu';
         },
         3: () => {
-            console.log('option 3 chosen!');
             return 'initMenu';
+        },
+        4: () => {
+            return 'initMenu';
+        },
+        5: () => {
+            return 'close';
         }
     })
 }
