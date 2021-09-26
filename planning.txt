@@ -1,0 +1,25 @@
+
+
+# ....
+
+
+
+
+# ....
+# > [worklet]
+# > [construct dependency graph]
+# > [create available tasks]
+# > [specify dependency]
+# > [information on worklet]
+# > [frontend]
+# > [node]
+# > [relation]
+# > [layers/workspaces]
+# > [when layer is active, overrides namespace of previous layers]
+# > [events/notifications (for when a dependency is unblocked)]
+
+
+
+
+
+# ....
