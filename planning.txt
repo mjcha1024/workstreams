@@ -5,21 +5,27 @@
 
 
 
+
+
+
+
+
+# (item)
+# (relation)
+# (rscr) # really simple command-line runner
+# (view) # basically composable filters
+# (space) # e.g. layer, workspace
+# (state) # e.g. specifying which layer an item belongs to
+# (event) # e.g. for when trigger happens
+# (node_information)
+# (views:layers/workspaces)
+# (views:streams)
+# (find_available_items)
+# (print_dependency_graph)
+
 # ....
-# > [worklet]
-# > [construct dependency graph]
-# > [create available tasks]
-# > [specify dependency]
-# > [information on worklet]
-# > [frontend]
-# > [node]
-# > [relation]
-# > [layers/workspaces]
-# > [when layer is active, overrides namespace of previous layers]
-# > [events/notifications (for when a dependency is unblocked)]
 
 
 
 
 
-# ....
